@@ -41,9 +41,6 @@ teams.forEach((item) => {
 });
 console.log(teams);
 
-
-
-
 // funzione per generare un numero random
 function numRandom() {
   return Math.floor(Math.random() * 100) + 1;
