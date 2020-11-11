@@ -9,11 +9,11 @@ var arrayBici =
   },
   {
     name : 'Trek',
-    weight : 8
+    weight : 7
   },
   {
     name : 'Kona',
-    weight : 7
+    weight : 8
   },
   {
     name : 'Marin',
@@ -22,6 +22,10 @@ var arrayBici =
   {
     name : 'Merida',
     weight : 9
+  },
+  {
+    name : 'Bianchi',
+    weight : 11
   }
 ];
 var leggera2 = arrayBici[0];
