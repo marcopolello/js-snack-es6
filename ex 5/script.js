@@ -37,7 +37,6 @@ console.log(arrayCompleto);
 
 
 /*  NON GUARDARE, PROVE PERSONALI PER COMPRENDERE MEGLIO :D :D
-
 var array = [{numero : 1},{numero : 2}, 'asd', 3 , 4];
 var nuovoArray = array.map((element, index, array) => {
   // console.log(element);
@@ -49,7 +48,6 @@ var nuovoArray = array.map((element, index, array) => {
   return element;
 });
 console.log(nuovoArray);        <----- FINE ESPERIMENTI(MIX OBJ, STRINGHE E NUMERI IN ARRAY)
-
 */
 
 
