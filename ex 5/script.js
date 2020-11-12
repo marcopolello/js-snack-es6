@@ -14,7 +14,7 @@ console.log(arrayObj);
 //  VERSIONE PIù ESPLICITA
 const newArray = arrayObj.map((element) => {
   //console.log(element);
-  const item = {...element, position: getRandomString(1)};
+  let item = {...element, position: getRandomString(1)};
   //console.log(item);
   return item;
 });
