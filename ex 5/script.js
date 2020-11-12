@@ -11,19 +11,48 @@ var arrayObj = [
 console.log(arrayObj);
 
 
-//  VERSIONE PIù ESPLICITA
-const newArray = arrayObj.map((element) => {
-  //console.log(element);
-  let item = {...element, position: getRandomString(1)};
-  //console.log(item);
-  return item;
-});
-
-console.log(newArray);
+//  VERSIONE con il map()
+// const newArray = arrayObj.map((element) => {
+//   //console.log(element);
+//   let item = {...element, position: getRandomString(1)};
+//   //console.log(item);
+//   return item;
+// });
+//console.log(newArray);
 
 //  VERSIONE BREVE
 // const newArray = arrayObj.map(elemento => ({ ...elemento, position: getRandomString(1) }))
 // console.log(newArray);
+
+
+// VERSIONE CON IL forEach()
+var arrayCompleto = [];
+const newArray2 = arrayObj.forEach((element, i) => {
+  // console.log(element);
+  var x = {...element, position: getRandomString(1)};
+  // console.log(x);
+  arrayCompleto.push(x);
+});
+console.log(arrayCompleto);
+
+
+/*  NON GUARDARE, PROVE PERSONALI PER COMPRENDERE MEGLIO :D :D
+
+var array = [{numero : 1},{numero : 2}, 'asd', 3 , 4];
+var nuovoArray = array.map((element, index, array) => {
+  // console.log(element);
+  // let a = element;
+  if (typeof(element) === 'object' && element !== null) {
+    var item = {...element, proprieta: 5};
+    return item;
+  }
+  return element;
+});
+console.log(nuovoArray);        <----- FINE ESPERIMENTI(MIX OBJ, STRINGHE E NUMERI IN ARRAY)
+
+*/
+
+
 
 
 
