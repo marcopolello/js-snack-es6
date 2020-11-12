@@ -8,9 +8,16 @@ var arrayObj = [
   {name: 'CrissCross', type: 'scarpe', color: 'black'},
   {name: 'Jenny', type: 'borsa', color: 'pink'}
 ];
-console.log(arrayObj);
+// console.log(arrayObj);
 
-const newArray = arrayObj.map(obj=> ({ ...obj, position: getRandomString(1) }))
+// const newArray = arrayObj.map(obj=> ({ ...obj, position: getRandomString(1) }))
+// console.log(newArray);
+
+const newArray = arrayObj.map((element, index, array) => {
+  console.log(element, index);
+  let proprieta = {name};
+  return proprieta;
+});
 console.log(newArray);
 
 
