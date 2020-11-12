@@ -8,23 +8,11 @@ var arrayObj = [
   {name: 'CrissCross', type: 'scarpe', color: 'black'},
   {name: 'Jenny', type: 'borsa', color: 'pink'}
 ];
-
-// const newArray = [...arrayObj];
-
 console.log(arrayObj);
 
-function cloneIt(){
-  const newArray = [...arrayObj];
-  arrayObj.forEach((item) => {
-    item.assign(newArray).position = getRandomString(1);
-  });
-  return newArray;
-}
-const arrayClone = cloneIt();
-console.log(arrayClone);
-// newArray.forEach((item) => {
-//   item.position = getRandomString(1);
-// });
+const newArray = arrayObj.map(obj=> ({ ...obj, position: getRandomString(1) }))
+console.log(newArray);
+
 
 
 
