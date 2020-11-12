@@ -27,9 +27,9 @@ console.log(arrayObj);
 
 // VERSIONE CON IL forEach()
 var arrayCompleto = [];
-const newArray2 = arrayObj.forEach((element, i) => {
+arrayObj.forEach((element, i) => {
   // console.log(element);
-  var x = {...element, position: getRandomString(1)};
+  let x = {...element, position: getRandomString(1)};
   // console.log(x);
   arrayCompleto.push(x);
 });
