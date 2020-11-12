@@ -8,18 +8,22 @@ var arrayObj = [
   {name: 'CrissCross', type: 'scarpe', color: 'black'},
   {name: 'Jenny', type: 'borsa', color: 'pink'}
 ];
-// console.log(arrayObj);
+console.log(arrayObj);
 
-// const newArray = arrayObj.map(obj=> ({ ...obj, position: getRandomString(1) }))
-// console.log(newArray);
 
-const newArray = arrayObj.map((element, index, array) => {
-  console.log(element, index);
-  let proprieta = {name};
-  return proprieta;
+//  VERSIONE PIù ESPLICITA
+const newArray = arrayObj.map((element) => {
+  //console.log(element);
+  const item = {...element, position: getRandomString(1)};
+  //console.log(item);
+  return item;
 });
+
 console.log(newArray);
 
+//  VERSIONE BREVE
+// const newArray = arrayObj.map(elemento => ({ ...elemento, position: getRandomString(1) }))
+// console.log(newArray);
 
 
 
