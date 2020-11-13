@@ -36,7 +36,6 @@ arrayBici.forEach((element) => {
   if (leggera.weight > element.weight) {
     leggera = element;
   } else if (leggera.weight == element.weight) {
-
     leggera2 = element;
   }
 });

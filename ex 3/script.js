@@ -35,7 +35,7 @@ const teams =
 ];
 
 teams.forEach((item) => {
-  console.log(item);
+  //console.log(item);
   item.points = numRandom();
   item.fouls = numRandom();
 });
