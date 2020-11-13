@@ -21,7 +21,7 @@ console.log(arrayObj);
 //console.log(newArray);
 
 //  VERSIONE BREVE
-// const newArray = arrayObj.map(elemento => ({ ...elemento, position: getRandomString(1) }))
+// const newArray = arrayObj.map(element => ({ ...element, position: getRandomString(1) }))
 // console.log(newArray);
 
 
@@ -63,10 +63,10 @@ console.log(nuovoArray);        <----- FINE ESPERIMENTI(MIX OBJ, STRINGHE E NUME
 
 // FUNZIONE PER LETTERA RANDOM
 function getRandomString(length) {
-    var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    var result = '';
+  var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  var result = '';
     for ( var i = 0; i < length; i++ ) {
       result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
     }
-    return result;
+  return result;
 }
