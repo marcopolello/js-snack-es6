@@ -9,3 +9,10 @@ const newArray = [];
 // prendo la parte dell'array iniziale che mi serve e la pusho nel nuovo array
 newArray.push(...myArray.slice(input1,input2));
 console.log(newArray);
+
+/*
+// versione con filter
+const nuovoArray = myArray.filter((element, index) => {
+  return index >= input1 && index <= input2;
+})
+console.log(nuovoArray);  */
