@@ -8,11 +8,17 @@ var input1 = parseInt(prompt("numero da 0 a 6")), input2 = parseInt(prompt("nume
 const newArray = [];
 // prendo la parte dell'array iniziale che mi serve e la pusho nel nuovo array
 newArray.push(...myArray.slice(input1,input2));
-console.log(newArray);
 
-/*
+// stampa con template literal strings
+console.log(`la lista era: ${myArray}. Tu hai selezionato questi numeri: ${input1} & ${input2} ed ora la lista è:  ${newArray}`);
+
+
+
+
 // versione con filter
+/*
 const nuovoArray = myArray.filter((element, index) => {
   return index >= input1 && index <= input2;
 })
-console.log(nuovoArray);  */
+console.log(nuovoArray);
+*/
