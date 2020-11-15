@@ -151,4 +151,4 @@ const propCats = ribbonCats.map((element) => {
     return myobj
 });
 
-console.log(propCats);
+// console.log(propCats);
