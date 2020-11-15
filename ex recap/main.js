@@ -42,7 +42,7 @@ cats.forEach((item, i) => {
   // console.log(contenuto);
   // stampa contenuto e lo sovrascrive ad ogni ciclo con un elemento in più
   container.innerHTML = ` ${contenuto}
-  <div>${item.name} <i class="fas fa-cat" style="color: ${item.color}"></i> </div>`
+  <div>${item.name}  <i class="fas fa-cat" style="color: ${item.color}"> </i> </div>`
 });
 
 //mettiamo un fiocco colorato ad ogni gattino,
@@ -64,3 +64,103 @@ var catsWithRibbons = cats.map((item) => {
   return element;
 });
 console.log(catsWithRibbons);
+
+
+// dividiamoli per sesso [2 nuovi array con filter]
+const femaleCats = catsWithRibbons.filter((item,i) => item.gender === 'female');
+const maleCats = catsWithRibbons.filter((item,i) => item.gender === 'male');
+//console.log(femaleCats, maleCats);
+
+// stampo i due nuovi array sui rispettivi container id="female" & "male"
+const femaleContainer = document.getElementById('female')
+const maleContainer = document.getElementById('male')
+//console.log(femaleContainer, maleContainer); stampa degli elementi del DOM selezionati
+
+// stampa i gattini femmina
+femaleCats.forEach((item, i) => {
+  let contenuto = femaleContainer.innerHTML;
+  // console.log(contenuto);
+  // stampa contenuto e lo sovrascrive ad ogni ciclo con un elemento in più
+  femaleContainer.innerHTML = ` ${contenuto}
+  <div>
+    ${item.name}  <i class="fas fa-ribbon" style="color: ${item.ribbon.color}; filter: opacity( ${item.ribbon.opacity}%);"> </i>
+    <i class="fas fa-cat" style="color: ${item.color}"> </i>
+  </div> `
+});
+
+// stampa i gattini maschio
+maleCats.forEach((item, i) => {
+  let contenuto = maleContainer.innerHTML;
+  // console.log(contenuto);
+  // stampa contenuto e lo sovrascrive ad ogni ciclo con un elemento in più
+  maleContainer.innerHTML = ` ${contenuto}
+  <div>
+    ${item.name}  <i class="fas fa-ribbon" style="color: ${item.ribbon.color}; filter: opacity( ${item.ribbon.opacity}%);"> </i>
+    <i class="fas fa-cat" style="color: ${item.color}"> </i>
+  </div> `
+});
+
+//creiamo una versione [nuovo arr] con prima femmine poi maschi [spread-rest]
+const orderCats = [...femaleCats, ...maleCats];
+console.log(orderCats);
+
+// ne facciamo output in 'container-new'
+const containerNew = document.getElementById('container-new');
+// stampiamo tutti i gattini in fila
+orderCats.forEach((item) => {
+    let contenuto = containerNew.innerHTML;
+
+    containerNew.innerHTML = ` ${contenuto}
+    <div>
+      <i class="fas fa-cat" style="color:${item.color}"></i>
+      <i class="fas fa-ribbon" style="color:${item.ribbon.color}; filter: opacity(${item.ribbon.opacity}%);"> </i>
+      ${item.name}
+    </div>
+  `
+});
+
+
+//altro array con obj di soli ribbon and name [destructuring in map]
+const arrayRibName = orderCats.map((item) => {
+  let {name: myName, ribbon} = item;
+  let objRibName = {
+    myName,
+    ribbon
+  }
+  return objRibName;
+})
+console.log(arrayRibName);
+
+const containerLast = document.getElementById('container-prova');
+// stampiamo tutti i gattini in fila
+arrayRibName.forEach((item) => {
+    let contenuto = containerLast.innerHTML;
+
+    containerLast.innerHTML = ` ${contenuto}
+    <div>
+      <i class="fas fa-ribbon" style="color:${item.ribbon.color}; filter: opacity(${item.ribbon.opacity}%);"> </i>
+      ${item.myName}
+    </div>
+  `
+});
+
+
+
+// var elementoDom = `<i class="fas fa-ribbon" style="color:${item.ribbon.color}; filter: opacity(${item.ribbon.opacity}%);"> </i>`;
+var provaFunzione = stampaGatti('funzione', catsWithRibbons);
+
+
+
+//funzione per la stampa sul documento
+function stampaGatti(id, arrayOriginale, dom) {
+  var containerCreato = document.getElementById(id);
+    arrayOriginale.forEach((item, i) => {
+      let contenuto = containerCreato.innerHTML;
+      containerCreato.innerHTML = ` ${contenuto}
+        <div>
+          ${item.name} <i class="fas fa-ribbon" style="color:${item.ribbon.color}; filter: opacity(${item.ribbon.opacity}%);"> </i>
+        </div>
+      `
+    });
+  return containerCreato;
+}

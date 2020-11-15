@@ -10,6 +10,9 @@
   background-color: blue; */
   /* debug */
 }
+#container div, #female div, #male div, #container-new div, #container-prova div{
+  margin: 10px;
+}
 .container-float::after {
   content: '';
   display: table;
@@ -18,5 +21,8 @@
 .float-left{
   float: left;
   width: 50%;
-  border: grey 1px solid;
+  border: black 1px solid;
+}
+#container-new{
+  border-bottom: 1px solid black;
 }
